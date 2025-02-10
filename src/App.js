@@ -65,7 +65,7 @@ function App() {
         <p>All the information you need to be the best brawler.</p>
         <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Search!..."/>
         <RxSwitch  onClick={changeMode}/>
-        <Display arr={display}/>
+        <Display arr={display} title={mode ? "Brawlers" : "Gears"}/>
       </header>
     </div>
   );
