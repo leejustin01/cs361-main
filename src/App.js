@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Display from './components/display';
 import { fetchBrawlers, fetchGears } from './api';
 import { RxSwitch } from "react-icons/rx";
+import { FaUndo } from "react-icons/fa";
 
 
 function App() {
@@ -19,6 +20,14 @@ function App() {
 
   const changeMode = () => {
     setMode(!mode);
+  };
+
+  const handleUndo = () => {
+    const isConfirmed = window.confirm("Undo pressed! Are you sure you want to undo and lose your search?");
+    if (isConfirmed) {
+      setInputValue(""); 
+      setDisplay(mode ? brawlers : gears); 
+    }
   };
 
 
@@ -62,10 +71,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Welcome to brawlstars.gg</h1>
-        <p>All the information you need to be the best brawler.</p>
-        <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Search!..."/>
-        <RxSwitch  onClick={changeMode}/>
+        <p>The hub of all guides to make you the best brawler. Search to find all the information about any brawler or gear in the game!</p>
+        <div className="searchBar">
+          <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Search for what you're looking for!"/>
+          <FaUndo onClick={handleUndo}/>  
+        </div>
+        <p>Switch between Brawlers and Gears -{'>'} <RxSwitch  onClick={changeMode}/></p> 
         <Display arr={display} title={mode ? "Brawlers" : "Gears"}/>
+        <p>Note: {mode ? "Brawlers" : "Gears"} may take a few minutes to load.</p>
       </header>
     </div>
   );

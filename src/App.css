@@ -41,6 +41,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: center;
 }
 
 .item {
@@ -51,3 +52,19 @@
   color:black;
   text-align: center;
 }
+
+.searchBar {
+  display: flex;
+  align-items: center; /* Aligns input and icon vertically */
+  gap: 10px; /* Adds space between the search bar and the icon */
+}
+
+.searchBar input[type="text"] {
+  flex-grow: 1; /* Makes input take up the available space */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 250px; /* Ensure the input has a minimum width */
+}
+
