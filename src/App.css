@@ -68,3 +68,7 @@
   min-width: 250px; /* Ensure the input has a minimum width */
 }
 
+.filter {
+  padding-top: 10px;
+
+}
