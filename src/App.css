@@ -41,11 +41,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
   align-items: center;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .item {
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f0f0f0;
@@ -53,22 +57,83 @@
   text-align: center;
 }
 
+.item-link {
+  text-decoration: none;
+}
+
 .searchBar {
   display: flex;
-  align-items: center; /* Aligns input and icon vertically */
-  gap: 10px; /* Adds space between the search bar and the icon */
+  align-items: center; 
+  gap: 10px; 
 }
 
 .searchBar input[type="text"] {
-  flex-grow: 1; /* Makes input take up the available space */
+  flex-grow: 1; 
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  min-width: 250px; /* Ensure the input has a minimum width */
+  min-width: 250px; 
 }
 
 .filter {
   padding-top: 10px;
 
+}
+
+.description-container {
+  display: flex;
+  justify-content: center;                 
+  text-align: center;        
+}
+
+.description {
+  max-width: 600px;          
+}
+
+.tierList {
+  width: 50%;
+  height: auto;
+}
+
+.page {
+  background-color: #282c34;
+}
+
+body {
+  background-color: #282c34;
+  color: white;
+}
+
+.login-link {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color:black;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.tierlist-link {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color:black;
+  text-align: center;
+}
+
+.header-bar {
+  display: flex;
+}
+
+.back-link {
+  color: red;
+}
+
+.back-link:active {
+  color:darkred;
 }

@@ -1,5 +1,6 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import Display from '../components/display';
 import { fetchBrawlers, fetchGears } from '../api';
 import { RxSwitch } from "react-icons/rx";
@@ -7,6 +8,8 @@ import { FaUndo } from "react-icons/fa";
 
 
 function Home() {
+  const { username } = useParams();
+
   const [mode, setMode] = useState(true);
   const [inputValue, setInputValue] = useState("");
   const [brawlers, setBrawlers] = useState([]);
@@ -121,6 +124,10 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="header-bar">
+          <Link className="login-link" to="/login">{username ? `Welcome back, ${username}` : "Login or create an account "}</Link>
+          <Link className="tierlist-link" to="/tier-list">Tier List</Link>
+        </div>
         <h1>Welcome to brawlstars.gg</h1>
         <p>The hub of all guides to make you the best brawler. Search to find all the information about any brawler or gear in the game!</p>
         <div className="searchBar">
